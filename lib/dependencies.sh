@@ -41,6 +41,7 @@ bundle_assets() {
     cd $build_dir
     echo "Minifying JS"
     npm run build:min
+    npm run build:stub
   else
     echo "Skipping JS asset bundle (no package.json)"
   fi
