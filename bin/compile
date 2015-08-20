@@ -120,6 +120,9 @@ build_dependencies() {
 header "Building dependencies"
 build_dependencies | indent
 
+header "Bundling assets"
+bundle_assets "$BUILD_DIR" | indent
+
 cache_build() {
   local cache_directories=$(get_cache_directories)
 

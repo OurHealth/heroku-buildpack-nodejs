@@ -33,3 +33,15 @@ rebuild_node_modules() {
     echo "Skipping (no package.json)"
   fi
 }
+
+bundle_assets() {
+  local build_dir=${1:-}
+
+  if [ -e $build_dir/package.json ]; then
+    cd $build_dir
+    echo "Minifying JS"
+    npm run build:min
+  else
+    echo "Skipping JS asset bundle (no package.json)"
+  fi
+}
